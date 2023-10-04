@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import { BrowserRouter as Rooter, Routes, Route, Router } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import Home from './Pages/Home';
+import Detail from './Pages/Detail';
+import Nav from './Components/Nav';
+import Contact from './Pages/Contact';
+import NewTask from './Pages/NewTask';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Rooter>
+     <Nav/>
+      <Routes>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/detail/:id' element={<Detail/>}> </Route>
+        <Route path='/contact' element={<Contact/>}> </Route>
+        <Route path='/newtask' element={<NewTask/>}> </Route>
+        
+      </Routes>
+
+    </Rooter>
   </React.StrictMode>
 );
 
