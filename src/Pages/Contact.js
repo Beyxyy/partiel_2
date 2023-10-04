@@ -9,6 +9,7 @@ const Email = ()=> {
         to_name: '',
         message: '',
     });
+    console.log(formData);
 
     const [isValid, setisValid] = useState(false);
 
